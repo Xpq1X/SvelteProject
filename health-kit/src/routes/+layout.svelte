@@ -1,8 +1,9 @@
 <script>
 	import { i18n } from "$lib/i18n";
 	import { ParaglideJS } from "@inlang/paraglide-sveltekit";
-	import Header from './Header.svelte';
+	import Header from '../lib/components/Header.svelte';
 	import '../app.css';
+	import  Footer from '../lib/components/Footer.svelte';
 	
 	/** @type {{children: import('svelte').Snippet}} */
 	let { children } = $props();
@@ -10,17 +11,13 @@
 
 <ParaglideJS {i18n}>
 	<div class="app">
-		<Header></Header>
+		
 
 		<main>
 			{@render children()}
 		</main>
 
-		<footer>
-			<p>
-				visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to learn about SvelteKit
-			</p>
-		</footer>
+		<Footer/>
 	</div>
 </ParaglideJS>
 
